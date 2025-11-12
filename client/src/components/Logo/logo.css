@@ -1,0 +1,27 @@
+.logo {
+  /* perspective: "50px"; */
+  height: 300px;
+  aspect-ratio: 1 / 1;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+circle {
+  stroke: hsl(261, 76%, 29%);
+  stroke-width: 5px;
+  fill: none;
+}
+
+.meridian {
+  animation: turn 1s infinite linear;
+}
+
+@keyframes turn {
+  0% {
+    transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--start));
+  }
+  100% {
+    transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--end));
+  }
+}
