@@ -1,6 +1,6 @@
 .logo {
-  /* perspective: "50px"; */
-  height: 300px;
+  height: 50px;
+  margin: 15px;
   aspect-ratio: 1 / 1;
   svg {
     width: 100%;
@@ -8,8 +8,8 @@
   }
 }
 circle {
-  stroke: hsl(261, 76%, 29%);
-  stroke-width: 5px;
+  stroke: var(--primary);
+  stroke-width: 20px;
   fill: none;
 }
 
