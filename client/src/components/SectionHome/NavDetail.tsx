@@ -6,10 +6,12 @@ interface NavDetailProps {
 
 function NavDetail({ isExpanded }: NavDetailProps) {
   return (
-    // <nav>{isExpanded && <input type="text" placeholder="Search..." />}</nav>
-    <div className={isExpanded ? "isOpen navDetail" : "isClosed navDetail"}>
-      <button type="button">Latest</button>
-      <input className="searchBar" type="text" placeholder="Search..." />
+    <div className="navDetailcontainer">
+      <div className={isExpanded ? "isOpen navDetail" : "isClosed navDetail"}>
+        <button type="button">Latest</button>
+        <button type="button">Choose date</button>
+        <input className="searchBar" type="text" placeholder="Search..." />
+      </div>
     </div>
   );
 }

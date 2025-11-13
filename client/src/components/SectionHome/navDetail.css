@@ -1,24 +1,26 @@
-.isOpen > * {
-  opacity: 1;
-  width: fit-content;
-  transition-behavior: allow-discrete;
-  transition: .5s linear;
-}
-.isClosed > * {
-  opacity: 0;
-  transform-origin: right;
-  padding: 0;
-  width: 0px;
-  transition-behavior: allow-discrete;
-  transition: .5s linear;
-}
-.navDetail {
-  border-radius: 999px;
-  margin-left: auto;
-  margin-right: auto;
+.navDetailcontainer {
+  display: flex;
+  justify-content: center;
+  height: max-content;
 }
 
-/* .navDetail > * {
-  transition-behavior: allow-discrete;
-  transition: .5s linear;
-} */
+.navDetail {
+  display: flex;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.isClosed.navDetail {
+  opacity: 0;
+}
+
+.isClosed > * {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.isOpen > * {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

@@ -1,7 +1,7 @@
 import ContentNews from "./ContentNews";
 
 import "./SectionHome.css";
-import Seemore from "./Seemore";
+import ToggleBtn from "./toggleBtn";
 
 type SectionHomeProps = {
   title: string;
@@ -27,7 +27,7 @@ function SectionHome({
   return (
     <>
       <h3>{title}</h3>
-      <Seemore onClick={handleClick} />
+      <ToggleBtn onClick={handleClick} isExpanded={isExpanded} />
       <section ref={sectionRef}>
         <ContentNews />
       </section>
