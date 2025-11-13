@@ -1,0 +1,24 @@
+.isOpen > * {
+  opacity: 1;
+  width: fit-content;
+  transition-behavior: allow-discrete;
+  transition: .5s linear;
+}
+.isClosed > * {
+  opacity: 0;
+  transform-origin: right;
+  padding: 0;
+  width: 0px;
+  transition-behavior: allow-discrete;
+  transition: .5s linear;
+}
+.navDetail {
+  border-radius: 999px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .navDetail > * {
+  transition-behavior: allow-discrete;
+  transition: .5s linear;
+} */

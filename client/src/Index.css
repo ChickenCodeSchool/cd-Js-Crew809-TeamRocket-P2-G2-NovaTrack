@@ -16,3 +16,13 @@ body {
   font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue",
     Helvetica, Arial, sans-serif, system-ui;
 }
+
+input,
+button {
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+}
