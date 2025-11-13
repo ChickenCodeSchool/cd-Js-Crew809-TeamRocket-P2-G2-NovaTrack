@@ -1,6 +1,7 @@
 nav {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 ul {
@@ -16,6 +17,7 @@ ul {
   flex-wrap: wrap;
   color: color-mix(in lch, canvasText 10%, canvas);
   transition: color 0.2s;
+  font-size: 1.25rem;
 }
 li {
   display: grid;

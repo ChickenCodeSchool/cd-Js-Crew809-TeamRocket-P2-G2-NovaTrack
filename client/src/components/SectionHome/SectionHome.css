@@ -1,0 +1,10 @@
+.sectionHome {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  margin: 1rem 5rem;
+  align-items: center;
+  h3 {
+    font-size: 3rem;
+  }
+}

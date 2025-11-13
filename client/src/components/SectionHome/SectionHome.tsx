@@ -26,10 +26,12 @@ function SectionHome({
   };
   return (
     <>
-      <h3>{title}</h3>
-      <ToggleBtn onClick={handleClick} isExpanded={isExpanded} />
-      <section ref={sectionRef}>
-        <ContentNews />
+      <section className="sectionHome">
+        <h3>{title}</h3>
+        <ToggleBtn onClick={handleClick} isExpanded={isExpanded} />
+        <section ref={sectionRef}>
+          <ContentNews />
+        </section>
       </section>
     </>
   );
