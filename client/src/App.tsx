@@ -1,10 +1,13 @@
+import { Outlet } from "react-router";
 import "./App.css";
-import Logo from "./components/Logo/Logo";
+import "./Index.css";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <>
-      <Logo />
+      <Navbar />
+      <Outlet />
     </>
   );
 }

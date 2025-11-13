@@ -1,0 +1,97 @@
+nav {
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  border: 1px solid color-mix(in lch, transparent 80%, canvas);
+  border-radius: 50px;
+  transition: .2s linear;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  flex-wrap: wrap;
+  color: color-mix(in lch, canvasText 10%, canvas);
+  transition: color 0.2s;
+}
+li {
+  display: grid;
+  place-items: center;
+  font-weight: 400;
+}
+
+li a {
+  display: inline-block;
+  padding: 0.5rem 2.25rem;
+  width: 100%;
+  height: 100%;
+  color: currentColor;
+  text-decoration: none;
+}
+
+a:is(:focus-visible, :hover),
+ul:has(a:target:is(:focus-visible, :hover))::after {
+  color: canvasText;
+}
+
+ul::before,
+ul::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50px;
+  background: color-mix(in lch, transparent, canvas 100%);
+  transition: all .18s;
+  transition-timing-function: linear(
+    0 0%,
+    0.2342 12.49%,
+    0.4374 24.99%,
+    0.6093 37.49%,
+    0.6835 43.74%,
+    0.7499 49.99%,
+    0.8086 56.25%,
+    0.8593 62.5%,
+    0.9023 68.75%,
+    0.9375 75%,
+    0.9648 81.25%,
+    0.9844 87.5%,
+    0.9961 93.75%,
+    1 100%
+  );
+}
+
+ul::after {
+  opacity: 1;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 2px solid currentColor;
+}
+
+/* Targeting */
+@supports (anchor-name: --a) {
+  a:target {
+    anchor-name: --target;
+  }
+  li:has(a:is(:hover, :focus-visible)) {
+    anchor-name: --anchor;
+  }
+
+  ul::before {
+    position-anchor: --anchor;
+    left: anchor(left);
+    top: anchor(top);
+    width: anchor-size(width);
+    height: anchor-size(height);
+  }
+
+  ul::after {
+    position-anchor: --target;
+    left: calc(anchor(left) + 1.25rem);
+    top: anchor(top);
+    width: calc(anchor-size(width) - 2.5rem);
+    height: anchor-size(height);
+  }
+}

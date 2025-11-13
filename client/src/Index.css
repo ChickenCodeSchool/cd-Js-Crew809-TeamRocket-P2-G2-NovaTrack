@@ -1,0 +1,18 @@
+:root {
+  --bg-color: rgb(7, 12, 21);
+  --primary: color-mix(in hsl, var(--bg-color) 20%, white);
+}
+*,
+*:after,
+*:before {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+
+body {
+  color: color-mix(in lch, canvasText 10%, canvas);
+  background: var(--bg-color);
+  font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue",
+    Helvetica, Arial, sans-serif, system-ui;
+}
