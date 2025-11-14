@@ -15,7 +15,7 @@ function Navbar() {
             <Link to="/home#news">News</Link>
           </li>
           <li>
-            <Link to="/home#launch">Launchs</Link>
+            <Link to="/home#launch">Launches</Link>
           </li>
           <li>
             <Link to={"./ISSTrack"}>ISS Track</Link>

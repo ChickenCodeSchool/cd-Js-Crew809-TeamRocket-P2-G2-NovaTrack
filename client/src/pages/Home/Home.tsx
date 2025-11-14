@@ -13,7 +13,7 @@ function Home() {
       <SectionHome
         isExpanded={isExpanded}
         setIsExpanded={setIsExpanded}
-        title="News"
+        title="Launches"
         sectionRef={sectionRef}
       />
     </>

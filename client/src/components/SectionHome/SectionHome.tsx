@@ -1,4 +1,4 @@
-import ContentNews from "./ContentNews";
+import LaunchContent from "./LaunchContent";
 
 import "./SectionHome.css";
 import ToggleBtn from "./toggleBtn";
@@ -19,18 +19,25 @@ function SectionHome({
 }: SectionHomeProps) {
   const handleClick = () => {
     setIsExpanded((prev) => !prev);
-    requestAnimationFrame(() => {
-      sectionRef.current?.scrollIntoView({ behavior: "smooth" });
-    });
-    console.log(isExpanded);
+    // requestAnimationFrame(() => {
+    //   sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    // });
   };
+
   return (
     <>
       <section className="sectionHome">
         <h3>{title}</h3>
         <ToggleBtn onClick={handleClick} isExpanded={isExpanded} />
-        <section ref={sectionRef}>
-          <ContentNews />
+        <section
+          ref={sectionRef}
+          className={
+            isExpanded
+              ? "allLaunchContentIsOpen allLaunchContent"
+              : "allLaunchContent"
+          }
+        >
+          <LaunchContent />
         </section>
       </section>
     </>

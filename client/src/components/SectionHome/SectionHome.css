@@ -2,9 +2,33 @@
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto auto;
-  margin: 1rem 5rem;
+  grid-template-areas:
+    "title btn"
+    "content content";
+  margin: 1rem auto;
+  width: clamp(300px, 100%, 1300px);
   align-items: center;
+
   h3 {
-    font-size: 3rem;
+    font-size: 2.25rem;
+    margin: 2rem 0 2rem 1.25rem;
   }
+}
+
+.allLaunchContent {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  max-height: 175px;
+  transition: max-height 2s linear;
+}
+
+.allLaunchContentIsOpen {
+  max-height: 5000px;
+  /* gap: 0.5rem; */
+  /* transition: gap .3s linear, max-height 1s linear; */
 }

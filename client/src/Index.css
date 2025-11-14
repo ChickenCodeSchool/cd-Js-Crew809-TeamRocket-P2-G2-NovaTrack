@@ -5,8 +5,6 @@
 *,
 *:after,
 *:before {
-  /* margin: 0;
-  padding: 0; */
   box-sizing: border-box;
 }
 
@@ -19,6 +17,7 @@ body {
 
 input,
 button {
+  /* background: none; */
   border: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;

@@ -1,5 +1,5 @@
 .toggleBtn {
-  margin-left: 30px;
+  margin: 0 1.25rem 0 2.5rem;
   position: relative;
   height: fit-content;
 }
