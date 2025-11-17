@@ -1,5 +1,3 @@
-import LaunchContent from "./LaunchContent";
-
 import "./SectionHome.css";
 import ToggleBtn from "./toggleBtn";
 
@@ -9,6 +7,7 @@ type SectionHomeProps = {
   sectionRef: React.RefObject<HTMLElement | null>;
   isExpanded: boolean;
   setIsExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+  childClass: string;
 };
 
 function SectionHome({
@@ -16,28 +15,29 @@ function SectionHome({
   isExpanded,
   setIsExpanded,
   sectionRef,
+  children,
+  childClass,
 }: SectionHomeProps) {
   const handleClick = () => {
     setIsExpanded((prev) => !prev);
-    // requestAnimationFrame(() => {
-    //   sectionRef.current?.scrollIntoView({ behavior: "smooth" });
-    // });
   };
 
   return (
     <>
-      <section className="sectionHome">
+      <section
+        className={isExpanded ? "sectionHomeIsOpen sectionHome" : "sectionHome"}
+      >
         <h3>{title}</h3>
         <ToggleBtn onClick={handleClick} isExpanded={isExpanded} />
         <section
           ref={sectionRef}
           className={
             isExpanded
-              ? "allLaunchContentIsOpen allLaunchContent"
-              : "allLaunchContent"
+              ? `allContentIsOpen ${childClass} allContent`
+              : `${childClass} allContent`
           }
         >
-          <LaunchContent />
+          {children}
         </section>
       </section>
     </>

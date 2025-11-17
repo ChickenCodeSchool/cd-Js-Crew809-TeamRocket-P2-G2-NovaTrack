@@ -8,27 +8,25 @@
   margin: 1rem auto;
   width: clamp(300px, 100%, 1300px);
   align-items: center;
-
+  background-color: var(--bg-color);
+  /* scroll-margin-top: 200px; */
+  /* transition: 1s ease-in-out; */
   h3 {
     font-size: 2.25rem;
     margin: 2rem 0 2rem 1.25rem;
   }
 }
 
-.allLaunchContent {
-  grid-area: content;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-  align-items: center;
-  gap: 0.5rem;
-  overflow: hidden;
-  max-height: 175px;
-  transition: max-height 2s linear;
+.allContentIsOpen {
+  max-height: 1000px;
 }
 
-.allLaunchContentIsOpen {
-  max-height: 5000px;
-  /* gap: 0.5rem; */
-  /* transition: gap .3s linear, max-height 1s linear; */
+.allContent {
+  grid-area: content;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
 }
+/* .sectionHomeIsOpen {
+  transform: translateY(-300px);
+  transition: 1s ease-in-out;
+} */

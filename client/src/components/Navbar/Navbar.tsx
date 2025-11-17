@@ -12,7 +12,7 @@ function Navbar() {
             <Link to={"./Home"}>Home</Link>
           </li>
           <li>
-            <Link to="/home#news">News</Link>
+            <Link to="/home#news">Events</Link>
           </li>
           <li>
             <Link to="/home#launch">Launches</Link>
