@@ -10,8 +10,8 @@ import App from "./App";
 import Home from "./pages/Home/Home";
 import Landing from "./pages/Landing/Landing";
 import DetailNews from "./pages/News/DetailNews";
-import DetailLaunch from "./pages/Launches/DetailLaunch";
 import ISSTrack from "./pages/ISStrack/ISSTrack";
+import DetailLaunches from "./pages/Launches/DetailLaunches";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -40,8 +40,8 @@ const router = createBrowserRouter([
         element: <DetailNews />,
       },
       {
-        path: "/Launch",
-        element: <DetailLaunch />,
+        path: "/Launch/:id",
+        element: <DetailLaunches />,
       },
       {
         path: "/IssTrack",

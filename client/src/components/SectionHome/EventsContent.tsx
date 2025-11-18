@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./eventsContent.css";
+import { Link } from "react-router";
 
 type EventsContentProps = {
   filterEvents: string;
@@ -16,17 +17,15 @@ type items = {
 };
 
 function EventsContent({ filterEvents, searchEvents }: EventsContentProps) {
-  const [more, setMore] = useState(4);
-
   const [res, setRes] = useState<items[]>([]);
 
   useEffect(() => {
     fetch(
-      `https://lldev.thespacedevs.com/2.3.0/events?limit=${more}&?mode=list${filterEvents}${searchEvents}`,
+      `https://lldev.thespacedevs.com/2.3.0/events?limit=8&?mode=list${filterEvents}${searchEvents}`,
     )
       .then((response) => response.json())
       .then((data) => setRes(data.results));
-  }, [more, filterEvents, searchEvents]);
+  }, [filterEvents, searchEvents]);
 
   return res.length > 0 ? (
     <>
@@ -37,17 +36,11 @@ function EventsContent({ filterEvents, searchEvents }: EventsContentProps) {
           </div>
           <span>{el.name}</span>
           <span>📍{el.location}</span>
-          <button type="button">view details</button>
+          <Link to={`/detailLaunches/${el.id}`} className="link">
+            View details
+          </Link>
         </div>
       ))}
-      <button
-        type="button"
-        onClick={() => {
-          setMore(more + 4);
-        }}
-      >
-        +
-      </button>
     </>
   ) : (
     <p>Loading..</p>

@@ -1,0 +1,28 @@
+.tooltip {
+  position: relative;
+  border-bottom: 2px dotted #ffffff;
+  cursor: help;
+}
+
+.tooltip .tip {
+  visibility: hidden;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #33333301;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: wrap;
+  height: auto;
+  width: auto;
+  text-align: center;
+  line-height: 20px;
+  backdrop-filter: blur(20px);
+}
+
+.tooltip:hover .tip {
+  visibility: visible;
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./launchContent.css";
+import { Link } from "react-router";
 
 type LaunchContentProps = {
   filterLaunches: string;
@@ -19,15 +20,14 @@ type items = {
 };
 function LaunchContent({ filterLaunches, searchLaunches }: LaunchContentProps) {
   const [res, setRes] = useState<items[]>([]);
-  const [more, setMore] = useState(5);
   useEffect(() => {
     fetch(
-      `https://lldev.thespacedevs.com/2.3.0/launches?limit=${more}&?mode=list${filterLaunches}${searchLaunches}`,
+      `https://lldev.thespacedevs.com/2.3.0/launches?limit=8&?mode=list${filterLaunches}${searchLaunches}`,
     )
       .then((response) => response.json())
       .then((data) => setRes(data.results));
     console.log(`${filterLaunches}${searchLaunches}`);
-  }, [filterLaunches, searchLaunches, more]);
+  }, [filterLaunches, searchLaunches]);
 
   return res.length > 0 ? (
     <>
@@ -38,17 +38,11 @@ function LaunchContent({ filterLaunches, searchLaunches }: LaunchContentProps) {
             NET : {el.net} ({el.net_precision.abbrev})
           </span>
           <span>{el.status.abbrev}</span>
-          <button type="button">view details</button>
+          <Link to={`/Launch/${el.id}`} className="link">
+            View details
+          </Link>
         </div>
       ))}
-      <button
-        type="button"
-        onClick={() => {
-          setMore(more + 3);
-        }}
-      >
-        +
-      </button>
     </>
   ) : (
     <p>Loading..</p>

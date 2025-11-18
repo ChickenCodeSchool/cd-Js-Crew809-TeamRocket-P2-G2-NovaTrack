@@ -17,11 +17,20 @@ body {
 
 input,
 button {
-  /* background: none; */
   border: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
   border-radius: 9999px;
   padding: 0.5rem 1.25rem;
+}
+
+.link {
+  color: white;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.089);
+  border-radius: 999px;
+  text-decoration: none;
+  padding: 0.5rem 1.25rem;
+  font-size: 14px;
 }
