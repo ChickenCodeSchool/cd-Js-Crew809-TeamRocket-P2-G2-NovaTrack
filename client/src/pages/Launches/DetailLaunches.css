@@ -7,22 +7,29 @@
 .tooltip .tip {
   visibility: hidden;
   position: absolute;
-  bottom: 125%;
+  width: 300px;
+  bottom: 100%;
   left: 50%;
-  transform: translateX(-50%);
-  background: #33333301;
-  color: #fff;
+  background-color: var(--bg-color);
+  border: solid 1px rgba(255, 255, 255, 0.378);
+  transform: translate(-50%, 10px);
+  color: #ffffffb1;
   padding: 8px 12px;
   border-radius: 6px;
   font-size: 14px;
   white-space: wrap;
   height: auto;
-  width: auto;
   text-align: center;
   line-height: 20px;
-  backdrop-filter: blur(20px);
+  transition: .3s linear;
 }
 
 .tooltip:hover .tip {
   visibility: visible;
+  transform: translate(-50%, -10px);
+}
+.launchesDetailContainer {
+  img {
+    width: 300px;
+  }
 }
