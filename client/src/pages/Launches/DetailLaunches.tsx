@@ -48,6 +48,16 @@ type Item = {
       name: string;
     };
   };
+  pad: {
+    name: string;
+    country: {
+      name: string;
+      alpha_3_code: string;
+    };
+    image: {
+      image_url: string;
+    };
+  };
 };
 
 function DetailLaunches() {
@@ -59,7 +69,7 @@ function DetailLaunches() {
       .then((response) => response.json())
       .then((data) => setRes(data));
     console.log(res);
-  }, [res]);
+  }, []);
   return res ? (
     <>
       <h1>{res.name}</h1>
@@ -125,7 +135,7 @@ function DetailLaunches() {
           📍{res.pad.name} in {res.pad.country.name} (
           {res.pad.country.alpha_3_code})
         </p>
-        <img src={res.pad.image.image_url} />
+        <img src={res.pad.image.image_url} alt={res.pad.name} />
       </div>
     </>
   ) : (

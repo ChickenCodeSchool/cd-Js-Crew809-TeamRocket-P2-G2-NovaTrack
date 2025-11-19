@@ -8,11 +8,11 @@
     width: 100%;
     height: 100%;
   }
-}
-circle {
-  stroke: var(--primary);
-  stroke-width: 20px;
-  fill: none;
+  circle {
+    stroke: var(--primary);
+    stroke-width: 20px;
+    fill: none;
+  }
 }
 
 .meridian {

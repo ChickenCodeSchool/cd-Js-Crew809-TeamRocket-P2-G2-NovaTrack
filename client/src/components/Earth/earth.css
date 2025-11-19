@@ -1,0 +1,34 @@
+.earthsvg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: earth linear .5s both;
+
+  .bigcircle2 {
+    fill: var(--bg-color);
+  }
+  .bigcircle {
+    fill: #ffffff;
+  }
+}
+.el {
+  fill: rgba(255, 255, 255, 0.162);
+}
+.elb {
+  fill: #6767b466;
+}
+.el1 {
+  fill: rgb(255, 255, 255);
+}
+.el2 {
+  fill: #6767b43d;
+}
+@keyframes earth {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
