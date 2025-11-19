@@ -29,7 +29,70 @@
   transform: translate(-50%, -10px);
 }
 .launchesDetailContainer {
-  img {
-    width: 300px;
+  gap: .5rem;
+  width: 75%;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "img titl titl"
+    "img sta net"
+    "img mis pad"
+    "rock mis map"
+    "rock ifr map"
+    "serv ifr padpic";
+  .imgPic {
+    width: 100%;
   }
+  .logoImg {
+    height: 20px;
+    width: 20px;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+.launchesDetailContainer > * {
+  border: 1px solid rgba(255, 255, 255, 0.259);
+  width: 100%;
+  height: 100%;
+  padding: 1.25rem;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  /* object-fit: cover; */
+}
+.launchesDetail-title {
+  grid-area: titl;
+}
+.launchesDetail-priImg {
+  grid-area: img;
+}
+.launchesDetail-net {
+  grid-area: net;
+}
+.launchesDetail-status {
+  grid-area: sta;
+}
+.launchesDetail-mission {
+  grid-area: mis;
+}
+.launchesDetail-provider {
+  grid-area: serv;
+}
+.launchesDetail-pad {
+  grid-area: pad;
+}
+.mapContainer {
+  grid-area: map;
+}
+.launchesDetail-rocket {
+  grid-area: rock;
+}
+.launchesDetail-vid {
+  grid-area: ifr;
+}
+.launchesDetail-sndImg {
+  grid-area: padpic;
 }

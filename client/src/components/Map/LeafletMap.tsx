@@ -6,7 +6,8 @@ import "./leafletMap.css";
 type MapProps = {
   long: number;
   lat: number;
-  description: string;
+  description: string | undefined;
+  className?: string;
 };
 function LeafletMap({ long, lat, description }: MapProps) {
   const emojiIcon = L.divIcon({
@@ -26,7 +27,7 @@ function LeafletMap({ long, lat, description }: MapProps) {
         attribution="&copy; CARTO"
       />
       <Marker position={[lat, long]} icon={emojiIcon}>
-        <Popup>{description}</Popup>
+        {description !== "" ? <Popup>{description}</Popup> : <br />}
       </Marker>
     </MapContainer>
   );

@@ -1,6 +1,6 @@
 .mapContainer {
-  aspect-ratio: 2 / 1;
-  width: 500px;
+  /* aspect-ratio: 2 / 1;
+  width: 500px; */
   background-color: var(--bg-color);
 }
 .leaflet-popup-content-wrapper,
