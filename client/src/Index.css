@@ -7,7 +7,9 @@
 *:before {
   box-sizing: border-box;
 }
-
+h3 {
+  margin: 0.5rem;
+}
 body {
   color: color-mix(in lch, canvasText 10%, canvas);
   background: var(--bg-color);
@@ -34,10 +36,10 @@ button {
   text-decoration: none;
   padding: 0.5rem 1.25rem;
   font-size: 14px;
-  margin-left: 1.25rem;
-  border-radius: 9999px;
-  overflow: visible;
-  z-index: 2;
+  isolation: isolate;
+  z-index: 1;
+  opacity: 1;
+  cursor: pointer;
 }
 .link::before {
   content: "▹";
@@ -46,7 +48,7 @@ button {
   position: absolute;
   left: -20px;
   top: -1px;
-  z-index: -1;
+  z-index: 0;
   transition: all 0.1s linear;
 }
 .link:hover::before {

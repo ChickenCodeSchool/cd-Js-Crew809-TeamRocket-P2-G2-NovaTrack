@@ -77,21 +77,46 @@ type Item = {
       description?: string;
     };
   };
+  vid_urls: [
+    url: string,
+    feature_image: string,
+    live: boolean,
+    type: {
+      name: string;
+    },
+  ];
+};
+type VideoUrl = {
+  live: boolean;
+  type: { name: string };
+  url: string;
+  feature_image: string;
+  publisher: string;
 };
 
 function DetailLaunches() {
   const [res, setRes] = useState<Item | null>();
   const { id } = useParams();
-
-  function truncate(str) {
-    return str.length > 150 ? str.slice(0, 150 - 1) + "..." : str;
+  const [vid, setVid] = useState<VideoUrl | null>(null);
+  function truncate(str: string) {
+    return str.length > 150 ? `${str.slice(0, 150 - 1)}...` : str;
   }
   useEffect(() => {
     fetch(`https://lldev.thespacedevs.com/2.3.0/launches/${id}?mode=list`)
       .then((response) => response.json())
-      .then((data) => setRes(data));
+      .then((data) => {
+        setRes(data);
+        const liveVideo = data.vid_urls.find((video) => video.live === true);
+
+        if (liveVideo) {
+          setVid(liveVideo);
+        } else if (data.vid_urls && data.vid_urls.length > 0) {
+          setVid(data.vid_urls[0]);
+        }
+      });
     console.log(res);
   }, []);
+
   return res ? (
     <>
       <article className="launchesDetailContainer">
@@ -106,13 +131,18 @@ function DetailLaunches() {
         />
         <p className="launchesDetail-net">
           <span className="tooltip">
-            NET<span className="tip">Not Earlier Than</span>
+            <strong>NET</strong>
+            <span className="tip">Not Earlier Than</span>
           </span>
-          : {res.net} <em>{res.net_precision.description}</em>
+          {res.net} <em>{res.net_precision.description}</em>
         </p>
-        <p className="launchesDetail-status">
-          Status : {res.status.name} <em>{res.status.description}</em>
-        </p>
+        <div className="launchesDetail-status">
+          <h3> Status</h3>
+          <span>{res.status.name}</span>{" "}
+          <span>
+            <em>{res.status.description}</em>
+          </span>
+        </div>
         <div className="launchesDetail-mission">
           <h3>Mission</h3>
           <p>{res.mission.description}</p>
@@ -139,12 +169,12 @@ function DetailLaunches() {
               </span>
             </span>
             )
+            <img
+              className="logoImg"
+              src={res.launch_service_provider.logo.thumbnail_url}
+              alt={res.launch_service_provider.logo.name}
+            />
           </p>
-          <img
-            className="logoImg"
-            src={res.launch_service_provider.logo.thumbnail_url}
-            alt={res.launch_service_provider.logo.name}
-          />
           <a
             href={res.launch_service_provider.wiki_url}
             target="_blank"
@@ -190,11 +220,30 @@ function DetailLaunches() {
           </p>
           <p>{truncate(res.rocket.configuration.description)}</p>
           <button type="button" className="link">
-            Learn more about this rocket
+            <span>Learn more about this rocket</span>
           </button>
         </div>
         <div className="launchesDetail-vid">
-          <p>upcomming content</p>
+          {vid ? (
+            <>
+              <h3>Launch Video</h3>
+              {vid.live ? (
+                <span>🔴 NOW LIVE</span>
+              ) : (
+                <span>{vid.type.name}</span>
+              )}
+              <a href={vid.url} target="_blank" rel="noreferrer">
+                <img
+                  className="imgPic iframe"
+                  src={vid.feature_image}
+                  alt={res.name}
+                />
+              </a>
+              <span>published by {vid.publisher}</span>
+            </>
+          ) : (
+            <p>No replay or video aivaiable.</p>
+          )}
         </div>
       </article>
     </>
