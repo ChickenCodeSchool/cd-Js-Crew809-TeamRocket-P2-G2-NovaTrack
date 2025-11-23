@@ -1,13 +1,7 @@
 import "./earth.css";
 function Earth() {
   return (
-    <svg
-      viewBox="0 0 1900 600"
-      width="1900"
-      height="600"
-      className="earthsvg"
-      aria-label="Earth decoration"
-    >
+    <svg viewBox="0 0 1900 600" width="1900" height="600" className="earthsvg">
       <title>Earth decoration</title>
       <defs>
         <mask id="maskcircle" maskUnits="userSpaceOnUse">

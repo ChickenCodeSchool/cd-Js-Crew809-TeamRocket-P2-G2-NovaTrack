@@ -12,10 +12,7 @@ export default function Logo() {
 
   return (
     <div className="logo">
-      <svg
-        viewBox="-500 -500 1000 1000"
-        aria-label="Rotating meridians sphere animation"
-      >
+      <svg viewBox="-500 -500 1000 1000">
         <title>Rotating Meridians</title>
         <circle r="450" />
 
