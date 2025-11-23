@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import "./DetailLaunches.css";
 import LeafletMap from "../../components/Map/LeafletMap";
+import Loader from "../../components/Loader/Loader";
 
 type Item = {
   name: string;
@@ -114,7 +115,6 @@ function DetailLaunches() {
           setVid(data.vid_urls[0]);
         }
       });
-    console.log(res);
   }, []);
 
   return res ? (
@@ -248,7 +248,7 @@ function DetailLaunches() {
       </article>
     </>
   ) : (
-    <p>loading</p>
+    <Loader />
   );
 }
 export default DetailLaunches;

@@ -41,32 +41,33 @@ function NavDetail({
     }
   };
   return (
-    <div className="navDetailcontainer">
-      <div
+    <nav className="navDetailcontainer">
+      <ul
         className={
           isExpandedLaunches || isExpandedEvents
             ? "isOpen navDetail"
             : "isClosed navDetail"
         }
       >
-        <button
-          type="button"
-          className="navChilds"
-          onClick={handleLastestClick}
-        >
-          Latest
-        </button>
-        <button type="button" className="navChilds">
-          Choose date
-        </button>
-        <input
-          className="searchBar navChilds"
-          type="text"
-          placeholder="Search..."
-          onChange={(el) => {
-            handleSearch(el);
-          }}
-        />
+        <li>
+          <button
+            type="button"
+            className="navChilds"
+            onClick={handleLastestClick}
+          >
+            Latest
+          </button>
+        </li>
+        <li>
+          <input
+            className="searchBar navChilds"
+            type="text"
+            placeholder="Search..."
+            onChange={(el) => {
+              handleSearch(el);
+            }}
+          />
+        </li>
         {/* <div>
           <DatePicker
             selected={selectedDate}
@@ -84,8 +85,8 @@ function NavDetail({
             minDate={selectedDate}
           />
         </div> */}
-      </div>
-    </div>
+      </ul>
+    </nav>
   );
 }
 export default NavDetail;

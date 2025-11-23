@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./eventsContent.css";
 import { Link } from "react-router";
+import Loader from "../Loader/Loader";
 
 type EventsContentProps = {
   filterEvents: string;
@@ -43,7 +44,7 @@ function EventsContent({ filterEvents, searchEvents }: EventsContentProps) {
       ))}
     </>
   ) : (
-    <p>Loading..</p>
+    <Loader />
   );
 }
 

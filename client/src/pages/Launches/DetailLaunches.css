@@ -44,6 +44,7 @@
     "ifr mis map"
     "ifr rock map"
     "serv rock padpic";
+  animation: fade .5s linear both;
   .imgPic {
     width: 100%;
   }

@@ -58,3 +58,11 @@ button {
 .link:hover {
   color: white;
 }
+@keyframes fade {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

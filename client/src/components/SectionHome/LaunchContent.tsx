@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./launchContent.css";
 import { Link } from "react-router";
+import Loader from "../Loader/Loader";
 
 type LaunchContentProps = {
   filterLaunches: string;
@@ -45,7 +46,7 @@ function LaunchContent({ filterLaunches, searchLaunches }: LaunchContentProps) {
       ))}
     </>
   ) : (
-    <p>Loading..</p>
+    <Loader />
   );
 }
 
