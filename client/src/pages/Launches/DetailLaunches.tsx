@@ -85,7 +85,7 @@ type Item = {
     live: boolean,
     type: {
       name: string;
-    },
+    }
   ];
 };
 type VideoUrl = {
@@ -100,17 +100,17 @@ function DetailLaunches() {
   const [res, setRes] = useState<Item | null>();
   const { id } = useParams();
   const [vid, setVid] = useState<VideoUrl | null>(null);
-  const [err, setErr]=useState(null)
+  const [err, setErr] = useState(null);
   function truncate(str: string) {
     return str.length > 150 ? `${str.slice(0, 150 - 1)}...` : str;
   }
   useEffect(() => {
     fetch(`https://lldev.thespacedevs.com/2.3.0/launches/${id}?mode=list`)
       .then((response) => {
-        if (response.status === 200){
-          throw new Error(response.status)
+        if (response.status !== 200) {
+          throw new Error(response.status);
         }
-        return response.json()
+        return response.json();
       })
       .then((data) => {
         setRes(data);
@@ -122,17 +122,17 @@ function DetailLaunches() {
           setVid(data.vid_urls[0]);
         }
       })
-       .catch((error) => setErr(error.message));
+      .catch((error) => setErr(error.message));
   }, []);
-  
-  if (err){
-    return <ErrorComp big={true} statNumb={err}/>
+
+  if (err) {
+    return <ErrorComp big={true} statNumb={err} />;
   }
-  if (!res){
-   return  <Loader/>
+  if (!res) {
+    return <Loader />;
   }
 
-  return(
+  return (
     <>
       <article className="launchesDetailContainer">
         <h1 className="launchesDetail-title">{res?.name}</h1>

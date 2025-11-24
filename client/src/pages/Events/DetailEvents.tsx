@@ -296,7 +296,11 @@ function DetailEvents() {
                 {res.program.map((prog: any) => (
                   <div key={prog.name} className="relatedSubChilds">
                     {prog.image?.thumbnail_url && (
-                      <img src={prog.image.thumbnail_url} alt={prog.name} />
+                      <img
+                        src={prog.image.thumbnail_url}
+                        alt={prog.name}
+                        className="logoImg"
+                      />
                     )}
                     {prog.name}
                     {prog.id && (
