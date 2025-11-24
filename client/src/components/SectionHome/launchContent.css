@@ -5,9 +5,11 @@
   gap: 0.5rem;
   overflow: hidden;
   max-height: 175px;
+  min-height:175px;
 }
 
 .singleLaunchContent {
+  position: relative;
   display: grid;
   grid-template-columns: 3fr 3fr 1fr auto;
   padding: 0.5rem 0.5rem 0.5rem 1.25rem;

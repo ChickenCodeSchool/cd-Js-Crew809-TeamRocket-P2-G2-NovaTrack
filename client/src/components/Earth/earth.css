@@ -3,8 +3,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  animation: earth linear .5s both;
-
+  animation: earth linear .5s both; 
   .bigcircle2 {
     fill: var(--bg-color);
   }

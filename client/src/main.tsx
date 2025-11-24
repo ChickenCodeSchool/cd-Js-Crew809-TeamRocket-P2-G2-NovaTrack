@@ -9,9 +9,9 @@ import { RouterProvider, createBrowserRouter } from "react-router";
 import App from "./App";
 import Home from "./pages/Home/Home";
 import Landing from "./pages/Landing/Landing";
-import DetailNews from "./pages/News/DetailNews";
 import ISSTrack from "./pages/ISStrack/ISSTrack";
 import DetailLaunches from "./pages/Launches/DetailLaunches";
+import DetailEvents from "./pages/Events/DetailEvents";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -36,8 +36,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/News",
-        element: <DetailNews />,
+        path: "/Events/:id",
+        element: <DetailEvents />,
       },
       {
         path: "/Launch/:id",
