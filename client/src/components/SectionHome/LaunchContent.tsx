@@ -26,7 +26,7 @@ function LaunchContent({ filterLaunches, searchLaunches }: LaunchContentProps) {
 
   useEffect(() => {
     fetch(
-      `https://lldev.thespacedevs.com/2.3.0/launches?limit=8&?mode=list${filterLaunches}${searchLaunches}`,
+      `https://lldev.thespacedevs.com/2.3.0/launches?limit=8&?mode=list${filterLaunches}${searchLaunches}`
     )
       .then((response) => {
         if (response.status !== 200) {
@@ -51,7 +51,8 @@ function LaunchContent({ filterLaunches, searchLaunches }: LaunchContentProps) {
         <div className="singleLaunchContent" key={el.id}>
           <span>{el?.name}</span>
           <span>
-            NET : {el?.net} ({el.net_precision?.abbrev})
+            NET : {new Date(el.net).toLocaleString()} (
+            {el.net_precision?.abbrev})
           </span>
           <span>{el?.status?.abbrev}</span>
           <Link to={`/Launch/${el.id}`} className="link">

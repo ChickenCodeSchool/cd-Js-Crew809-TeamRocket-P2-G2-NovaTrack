@@ -66,10 +66,19 @@ button {
     transform: translateY(0);
   }
 }
-@keyframes fadeOpa{
-  from{
-    opacity:0;
-  }to{
-    opacity:1;
+@keyframes fadeOpa {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+
+span,
+p {
+  cursor: default;
+}
+button {
+  cursor: pointer;
 }

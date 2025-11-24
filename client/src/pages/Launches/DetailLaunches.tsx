@@ -149,7 +149,8 @@ function DetailLaunches() {
             <strong>NET</strong>
             <span className="tip">Not Earlier Than</span>
           </span>
-          {res.net} <em>{res.net_precision.description}</em>
+          {new Date(res.net).toLocaleString()} (local time)
+          <em>{res.net_precision.description}</em>
         </p>
         <div className="launchesDetail-status">
           <h3> Status</h3>

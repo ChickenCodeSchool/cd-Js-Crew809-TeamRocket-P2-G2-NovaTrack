@@ -51,7 +51,7 @@ type SpaceEvent = {
     };
   }>;
   expeditions: Array<{
-    id: number;
+    id: string;
     name: string;
     spacestation: {
       name: string;
@@ -95,7 +95,14 @@ type SpaceEvent = {
 
 type VideoUrl = {
   live: boolean;
+  url: string;
+  type: {
+    name: string;
+  };
+  feature_image: string;
+  publisher: string;
 };
+
 function DetailEvents() {
   const [res, setRes] = useState<SpaceEvent | null>();
   const [vid, setVid] = useState<VideoUrl | null>(null);
@@ -230,7 +237,7 @@ function DetailEvents() {
             {res.launches && res.launches.length > 0 && (
               <div className=" relatedChilds big">
                 <h3>Launches</h3>
-                {res.launches.map((launch: Item) => (
+                {res.launches.map((launch) => (
                   <div key={launch.id} className="relatedSubChilds">
                     {launch.image?.thumbnail_url && (
                       <img
@@ -259,7 +266,7 @@ function DetailEvents() {
                 {res.expeditions[0].spacestation.name}
                 {res.expeditions[0].id && (
                   <Link
-                    to={`/res.expeditions/${res.expeditions.id}`}
+                    to={`/expeditions/${res.expeditions.id}`}
                     className="link"
                   >
                     More about this expedition
