@@ -2,6 +2,8 @@ import "./DetailEvents.css";
 import { useParams, Link } from "react-router";
 import { useEffect, useState } from "react";
 import Loader from "../../components/Loader/Loader";
+import ErrorComp from "../../components/ErrorComp/ErrorComp";
+
 type SpaceEvent = {
   name: string;
   description: string;
@@ -97,11 +99,17 @@ type VideoUrl = {
 function DetailEvents() {
   const [res, setRes] = useState<SpaceEvent | null>();
   const [vid, setVid] = useState<VideoUrl | null>(null);
+  const [err, setErr] = useState(null);
 
   const { id } = useParams();
   useEffect(() => {
     fetch(`https://lldev.thespacedevs.com/2.3.0/events/${id}?mode=list`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.status !== 200) {
+          throw new Error(response.status);
+        }
+        return response.json();
+      })
       .then((data) => {
         setRes(data);
         const liveVideo = data.vid_urls.find((video) => video.live === true);
@@ -111,9 +119,16 @@ function DetailEvents() {
         } else if (data.vid_urls && data.vid_urls.length > 0) {
           setVid(data.vid_urls[0]);
         }
-      });
+      })
+      .catch((error) => setErr(error.message));
   }, [id]);
-  return res ? (
+  if (err) {
+    return <ErrorComp big={true} statNumb={err} />;
+  }
+  if (!res) {
+    return <Loader />;
+  }
+  return (
     <>
       <article className="eventsDetailContainer">
         <>
@@ -297,8 +312,6 @@ function DetailEvents() {
         </>
       </article>
     </>
-  ) : (
-    <Loader />
   );
 }
 
