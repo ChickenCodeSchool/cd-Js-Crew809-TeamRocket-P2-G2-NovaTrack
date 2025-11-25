@@ -1,0 +1,26 @@
+.mapContainer {
+  /* aspect-ratio: 2 / 1;
+  width: 500px; */
+  background-color: var(--bg-color);
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: black;
+  border: 1px solid rgba(255, 255, 255, 0.637);
+  color: white;
+}
+.emoji-marker {
+  transform-origin: bottom;
+  font-size: 32px;
+  cursor: help;
+  transition: transform .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.emoji-marker:hover {
+  transform: rotate(-10deg);
+}
+.leaflet-container .leaflet-control-attribution {
+  background: transparent;
+  a {
+    color: #333;
+  }
+}

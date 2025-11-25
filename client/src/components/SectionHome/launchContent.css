@@ -1,0 +1,21 @@
+.allLaunchContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  max-height: 175px;
+  min-height:175px;
+}
+
+.singleLaunchContent {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr auto;
+  padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.089);
+  width: 100%;
+  transition: .3s linear;
+}

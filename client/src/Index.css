@@ -1,0 +1,84 @@
+:root {
+  --bg-color: rgb(7, 12, 21);
+  --primary: color-mix(in hsl, var(--bg-color) 20%, white);
+}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+h3 {
+  margin: 0.5rem;
+}
+body {
+  color: color-mix(in lch, canvasText 10%, canvas);
+  background: var(--bg-color);
+  font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue",
+    Helvetica, Arial, sans-serif, system-ui;
+}
+
+input,
+button {
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+}
+
+.link {
+  position: relative;
+  color: white;
+  background: var(--bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.089);
+  border-radius: 999px;
+  text-decoration: none;
+  padding: 0.5rem 1.25rem;
+  font-size: 14px;
+  isolation: isolate;
+  z-index: 1;
+  opacity: 1;
+  cursor: pointer;
+}
+.link::before {
+  content: "▹";
+  color: white;
+  font-size: 1.6rem;
+  position: absolute;
+  left: -20px;
+  top: -1px;
+  z-index: 0;
+  transition: all 0.1s linear;
+}
+.link:hover::before {
+  transform: translateX(25px);
+  opacity: 0;
+}
+.link:hover {
+  color: white;
+}
+@keyframes fade {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOpa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+span,
+p {
+  cursor: default;
+}
+button {
+  cursor: pointer;
+}
