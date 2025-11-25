@@ -4,31 +4,35 @@ import "./navDetail.css";
 interface NavDetailProps {
   isExpandedEvents: boolean;
   isExpandedLaunches: boolean;
+  isExpandedExpe: boolean;
   setFilterLaunches: React.Dispatch<React.SetStateAction<string>>;
   setSearchLaunches: React.Dispatch<React.SetStateAction<string>>;
   setFilterEvents: React.Dispatch<React.SetStateAction<string>>;
   setSearchEvents: React.Dispatch<React.SetStateAction<string>>;
+  setFilterExpe: React.Dispatch<React.SetStateAction<string>>;
+  setSearchExpe: React.Dispatch<React.SetStateAction<string>>;
 }
 
 function NavDetail({
   isExpandedEvents,
   isExpandedLaunches,
+  isExpandedExpe,
   setFilterLaunches,
   setSearchLaunches,
   setSearchEvents,
   setFilterEvents,
+  setSearchExpe,
+  setFilterExpe,
 }: NavDetailProps) {
-  // const [selectedDate, setStartDate] = useState<Date | null>(
-  //   new Date("2014/02/08"),
-  // );
-  // const [endDate, setEndDate] = useState<Date | null>(new Date("2014/02/10"));
-
   const handleLastestClick = () => {
     if (isExpandedLaunches === true) {
       setFilterLaunches("&ordering=-last_updated");
     }
     if (isExpandedEvents === true) {
       setFilterEvents("&ordering=-name");
+    }
+    if (isExpandedExpe === true) {
+      setFilterExpe("&ordering=-name");
     }
   };
 
@@ -39,12 +43,15 @@ function NavDetail({
     if (isExpandedEvents === true) {
       setSearchEvents(`&search=${el.target.value}`);
     }
+    if (isExpandedExpe === true) {
+      setSearchExpe(`&search=${el.target.value}`);
+    }
   };
   return (
     <nav className="navDetailcontainer">
       <ul
         className={
-          isExpandedLaunches || isExpandedEvents
+          isExpandedLaunches || isExpandedEvents || isExpandedExpe
             ? "isOpen navDetail"
             : "isClosed navDetail"
         }
@@ -68,23 +75,6 @@ function NavDetail({
             }}
           />
         </li>
-        {/* <div>
-          <DatePicker
-            selected={selectedDate}
-            onChange={(date: Date | null) => setStartDate(date)}
-            selectsStart
-            startDate={selectedDate}
-            endDate={endDate}
-          />
-          <DatePicker
-            selected={endDate}
-            onChange={(date: Date | null) => setEndDate(date)}
-            selectsEnd
-            startDate={selectedDate}
-            endDate={endDate}
-            minDate={selectedDate}
-          />
-        </div> */}
       </ul>
     </nav>
   );

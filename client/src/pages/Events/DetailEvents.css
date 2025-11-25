@@ -69,9 +69,10 @@
   margin: 0 auto;
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fill, auto);
   animation: fade 0.5s linear both;
+  justify-items: center;
 }
 .relatedChilds {
   display: grid;

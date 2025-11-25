@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
-import "./eventsContent.css";
 import { Link } from "react-router";
 import Loader from "../Loader/Loader";
 import ErrorComp from "../ErrorComp/ErrorComp";
-
-type EventsContentProps = {
-  filterEvents: string;
-  searchEvents: string;
+import "./expeditionContent.css";
+type ExpeContentProps = {
+  filterExpe: string;
+  searchExpe: string;
 };
 
 type items = {
-  id: number;
   name: string;
-  image: {
-    image_url: string;
+  id: number;
+  start: string;
+  end: string;
+  mission_patches: {
+    name: string;
   };
-  location: string;
 };
-
-function EventsContent({ filterEvents, searchEvents }: EventsContentProps) {
+function ExpeditionContent({ filterExpe, searchExpe }: ExpeContentProps) {
   const [res, setRes] = useState<items[]>([]);
   const [err, setErr] = useState(null);
+
   useEffect(() => {
     fetch(
-      `https://lldev.thespacedevs.com/2.3.0/events?limit=8&?mode=list${filterEvents}${searchEvents}`
+      `https://lldev.thespacedevs.com/2.3.0/expeditions/?limit=8&?mode=list${filterExpe}${searchExpe}`
     )
       .then((response) => {
         if (response.status !== 200) {
@@ -33,7 +33,7 @@ function EventsContent({ filterEvents, searchEvents }: EventsContentProps) {
       })
       .then((data) => setRes(data.results))
       .catch((error) => setErr(error.message));
-  }, [filterEvents, searchEvents]);
+  }, [filterExpe, searchExpe]);
 
   if (err) {
     return <ErrorComp statNumb={err} big={false} />;
@@ -41,24 +41,24 @@ function EventsContent({ filterEvents, searchEvents }: EventsContentProps) {
   if (res.length === 0) {
     return <Loader />;
   }
-  return res.length > 0 ? (
+
+  return (
     <>
       {res.map((el) => (
-        <div key={el.id} className="singleEventsContent">
-          <div className="singleEventsContent-img">
-            <img src={el.image.image_url} alt={el.name} />
-          </div>
-          <span>{el.name}</span>
-          <span>📍{el.location}</span>
-          <Link to={`/Events/${el.id}`} className="link">
+        <div className="singleExpeContent" key={el.id}>
+          <span>{el?.name}</span>
+
+          <span>FROM : {new Date(el.start).toLocaleString()}</span>
+          <span> TO : {new Date(el?.end).toLocaleString()}</span>
+
+          <span>{el.mission_patches.name}</span>
+          <Link to={`/Expedition/${el.id}`} className="link">
             View details
           </Link>
         </div>
       ))}
     </>
-  ) : (
-    <Loader />
   );
 }
 
-export default EventsContent;
+export default ExpeditionContent;
