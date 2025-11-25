@@ -14,7 +14,7 @@ function Earth() {
         </filter>
 
         <filter id="innerDropshadow">
-          <feFlood flood-color="white" />
+          <feFlood floodColor="white" />
 
           {/* <!-- This next operation subtracts the original shape from the red color 
 field filling the filter region - which will give you a big color border 

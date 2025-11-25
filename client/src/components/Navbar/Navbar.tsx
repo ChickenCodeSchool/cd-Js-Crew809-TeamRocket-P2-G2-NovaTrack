@@ -5,7 +5,7 @@ import "./navbar.css";
 function Navbar() {
   return (
     <>
-      <nav>
+      <nav className="primNav">
         <Logo />
         <ul>
           <li>

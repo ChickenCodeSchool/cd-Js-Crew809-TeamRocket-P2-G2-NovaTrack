@@ -1,5 +1,5 @@
 .sectionHome {
-  position:relative;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto auto;
@@ -25,4 +25,7 @@
   grid-area: content;
   overflow: hidden;
   transition: max-height 1s ease-in-out;
+}
+section.sectionHome:first-of-type {
+  margin-top: 8rem;
 }

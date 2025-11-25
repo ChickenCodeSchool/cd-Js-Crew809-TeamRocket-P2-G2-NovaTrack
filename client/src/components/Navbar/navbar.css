@@ -1,13 +1,17 @@
 nav {
-  display: flex;
-  align-items: center;
-  position: relative;
+  display: grid;
+  place-items: center;
 }
-
+.primNav {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
 ul {
   border: 1px solid color-mix(in lch, transparent 80%, canvas);
   border-radius: 50px;
-  transition: .2s linear;
+  transition: 0.2s linear;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -18,6 +22,7 @@ ul {
   color: color-mix(in lch, canvasText 10%, canvas);
   transition: color 0.2s;
   font-size: 1.25rem;
+  backdrop-filter: blur(20px);
 }
 li {
   display: grid;
@@ -46,7 +51,7 @@ ul::after {
   z-index: -1;
   border-radius: 50px;
   background: color-mix(in lch, transparent, canvas 100%);
-  transition: all .18s;
+  transition: all 0.18s;
   transition-timing-function: linear(
     0 0%,
     0.2342 12.49%,

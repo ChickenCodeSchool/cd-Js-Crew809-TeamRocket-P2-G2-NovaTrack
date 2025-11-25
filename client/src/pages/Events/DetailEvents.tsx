@@ -110,7 +110,7 @@ function DetailEvents() {
 
   const { id } = useParams();
   useEffect(() => {
-    fetch(`https://lldev.thespacedevs.com/2.3.0/events/${id}?mode=list`)
+    fetch(`https://lldev.thespacedevs.com/2.3.0/events/${id}/`)
       .then((response) => {
         if (response.status !== 200) {
           throw new Error(response.status);
@@ -128,7 +128,8 @@ function DetailEvents() {
         }
       })
       .catch((error) => setErr(error.message));
-  }, [id]);
+    console.log(res);
+  }, []);
   if (err) {
     return <ErrorComp big={true} statNumb={err} />;
   }
@@ -266,7 +267,7 @@ function DetailEvents() {
                 {res.expeditions[0].spacestation.name}
                 {res.expeditions[0].id && (
                   <Link
-                    to={`/expeditions/${res.expeditions.id}`}
+                    to={`/Expedition/${res.expeditions[0].id}`}
                     className="link"
                   >
                     More about this expedition
