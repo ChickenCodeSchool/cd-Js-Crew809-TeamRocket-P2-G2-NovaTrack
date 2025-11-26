@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router";
 import Loader from "../../components/Loader/Loader";
 import ErrorComp from "../../components/ErrorComp/ErrorComp";
+import type { ExpeditionDetail } from "../../types/detailTypes";
+
 function Expedition() {
   const { id } = useParams();
-  const [res, setRes] = useState<expeditio | null>();
+  const [res, setRes] = useState<ExpeditionDetail | null>();
 
   const [err, setErr] = useState(null);
   useEffect(() => {
@@ -99,7 +101,7 @@ function Expedition() {
             <div className="crewAll">
               {res.crew &&
                 res.crew.length > 0 &&
-                res.crew.map((member: any) => (
+                res.crew.map((member) => (
                   <div
                     className="crewMember divStyle"
                     key={member.astronaut.id}
@@ -133,7 +135,7 @@ function Expedition() {
             {res.spacewalks && res.spacewalks.length > 0 && (
               <div className="walks">
                 <h3>Spacewalks (EVAs)</h3>
-                {res.spacewalks.map((spacewalk: any) => (
+                {res.spacewalks.map((spacewalk) => (
                   <div key={spacewalk.id} className="walk divStyle">
                     <span>
                       {spacewalk.name}
@@ -157,7 +159,7 @@ function Expedition() {
               <div className="owners1">
                 <h3>Station Owners</h3>
                 <div className="owners">
-                  {res.spacestation.owners.map((agency: any) => (
+                  {res.spacestation.owners.map((agency) => (
                     <div key={agency.id} className="owner divStyle">
                       {agency.logo?.thumbnail_url && (
                         <img
@@ -169,7 +171,7 @@ function Expedition() {
                       {agency.name}
                       {agency.abbrev && ` (${agency.abbrev})`}
                       {agency.id && (
-                        <Link to={`/agency/${agency.id}`} className="link">
+                        <Link to={`/Agency/${agency.id}`} className="link">
                           View more
                         </Link>
                       )}

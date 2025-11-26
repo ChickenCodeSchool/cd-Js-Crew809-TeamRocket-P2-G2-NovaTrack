@@ -1,0 +1,102 @@
+.launcherConfigContainer {
+  width: 75%;
+  animation: fade 0.5s linear both;
+  margin: 8rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  img {
+    width: 200px;
+  }
+}
+.familyManufacturers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.familyManufacturersChilds {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 0.15rem 0.2rem 1rem;
+}
+.familyStats > *,
+.manufacturerInfo > *,
+.programInfo > * {
+  display: block;
+}
+.manufacturerCard,
+.programCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto 50px;
+  grid-template-areas:
+    "img info"
+    "des des"
+    "btn btn";
+  img {
+    height: 130px;
+    width: 130px;
+    place-self: end;
+  }
+  p,
+  .programAgencies {
+    grid-area: des;
+    place-self: center;
+  }
+  .manufacturerInfo,
+  .programInfo {
+    grid-area: info;
+    text-align: left;
+    align-self: center;
+    justify-self: left;
+  }
+  a {
+    grid-area: btn;
+    place-self: center;
+  }
+}
+.configHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  grid-template-rows: repeat(2, auto);
+  /* place-items: center; */
+  grid-template-areas:
+    "img titl titl"
+    "img over over";
+  .configOverview {
+    grid-area: over;
+  }
+  .configImage {
+    grid-area: img;
+    display: grid;
+    padding: 0;
+    img {
+      place-self: center;
+      width: 100%;
+      border-radius: 15px;
+    }
+  }
+  .configTitle {
+    grid-area: titl;
+  }
+}
+.configAllDetails,
+.relatedSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.configChild {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  h2 {
+    margin: 1rem 0 0 0;
+  }
+}

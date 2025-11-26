@@ -59,6 +59,40 @@ button {
 .link:hover {
   color: white;
 }
+
+.linkSmall {
+  position: relative;
+  color: white;
+  background: var(--bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.089);
+  border-radius: 999px;
+  text-decoration: none;
+  padding: 0.25rem 0.7rem;
+  font-size: 14px;
+  isolation: isolate;
+  z-index: 1;
+  opacity: 1;
+  cursor: pointer;
+  width: fit-content;
+}
+.linkSmall::before {
+  content: "▹";
+  color: white;
+  font-size: 1.2rem;
+  position: absolute;
+  left: -15px;
+  top: 0px;
+  z-index: 0;
+  transition: all 0.1s linear;
+}
+.linkSmall:hover::before {
+  transform: translateX(25px);
+  opacity: 0;
+}
+.linkSmall:hover {
+  color: white;
+}
+
 @keyframes fade {
   from {
     transform: translateY(100vh);
@@ -98,4 +132,16 @@ button {
   .imgPic {
     mask-image: radial-gradient(circle, var(--bg-color) 0%, transparent 100%);
   }
+}
+.divSmall {
+  /* border: 1px solid rgba(255, 255, 255, 0.259); */
+  padding: 0.25rem 1.25rem;
+  /* border-radius: 20px; */
+  /* text-wrap: balance; */
+  /* text-align: center; */
+  /* display: block; */
+  /* width: 100%; */
+}
+.divStyle > * {
+  display: block;
 }

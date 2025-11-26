@@ -48,6 +48,7 @@ function ISSinfos() {
       });
 
       if (issResponse.status !== 200 || geoResponse.status !== 200) {
+        // if iss throw error (deux if)
         throw new Error(issResponse.status || geoResponse.status);
       }
       console.log(geoJson);

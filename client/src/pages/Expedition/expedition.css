@@ -1,5 +1,5 @@
 .expeditionDetailContainer {
-  margin-top: 8rem;
+  animation: fade 0.5s linear both;
   margin: 8rem auto 0 auto;
   display: grid;
   grid-template-columns: 300px 1fr;

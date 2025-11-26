@@ -10,6 +10,7 @@ import DetailLaunches from "./pages/Launches/DetailLaunches";
 import DetailEvents from "./pages/Events/DetailEvents";
 import NotFound from "./pages/NotFound/NotFound";
 import Expedition from "./pages/Expedition/Expedition";
+import Rocketdetail from "./pages/Rocket/RocketDetail";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/Expedition/:id",
         element: <Expedition />,
+      },
+      {
+        path: "/Rocket/:id",
+        element: <Rocketdetail />,
       },
       {
         path: "*",

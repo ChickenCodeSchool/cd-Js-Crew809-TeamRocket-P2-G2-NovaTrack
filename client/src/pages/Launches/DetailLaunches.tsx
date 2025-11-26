@@ -1,93 +1,11 @@
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { useState, useEffect } from "react";
 import "./DetailLaunches.css";
 import LeafletMap from "../../components/Map/LeafletMap";
 import Loader from "../../components/Loader/Loader";
 import ErrorComp from "../../components/ErrorComp/ErrorComp";
+import type { LaunchesDetail } from "../../types/detailTypes";
 
-type Item = {
-  name: string;
-
-  image?: {
-    image_url?: string;
-    name: string;
-  };
-
-  net: string;
-  net_precision: {
-    description: string;
-  };
-
-  status: {
-    name: string;
-    description: string;
-  };
-
-  mission: {
-    name: string;
-    description: string;
-    type: string;
-    orbit: {
-      name: string;
-      abbrev: string;
-      celestial_body: {
-        name: string;
-      };
-    };
-  };
-
-  launch_service_provider: {
-    administrator: string;
-    name: string;
-    description: string;
-    abbrev: string;
-    wiki_url: string;
-
-    image?: {
-      image_url?: string;
-    };
-
-    logo: {
-      thumbnail_url: string;
-      name: string;
-    };
-  };
-  pad: {
-    name: string;
-    country: {
-      name: string;
-      alpha_3_code: string;
-    };
-    image: {
-      image_url: string;
-      name: string;
-    };
-    location: {
-      longitude: number;
-      latitude: number;
-      description?: string;
-    };
-    map_url?: string;
-  };
-
-  rocket: {
-    configuration: {
-      full_name: string;
-      manufacturer: {
-        abbrev: string;
-      };
-      description?: string;
-    };
-  };
-  vid_urls: [
-    url: string,
-    feature_image: string,
-    live: boolean,
-    type: {
-      name: string;
-    }
-  ];
-};
 type VideoUrl = {
   live: boolean;
   type: { name: string };
@@ -97,7 +15,7 @@ type VideoUrl = {
 };
 
 function DetailLaunches() {
-  const [res, setRes] = useState<Item | null>();
+  const [res, setRes] = useState<LaunchesDetail | null>();
   const { id } = useParams();
   const [vid, setVid] = useState<VideoUrl | null>(null);
   const [err, setErr] = useState(null);
@@ -123,7 +41,7 @@ function DetailLaunches() {
         }
       })
       .catch((error) => setErr(error.message));
-  }, []);
+  }, [id]);
 
   if (err) {
     return <ErrorComp big={true} statNumb={err} />;
@@ -234,10 +152,10 @@ function DetailLaunches() {
             <strong>{res.rocket.configuration.full_name}</strong> is made by{" "}
             <strong>{res.rocket.configuration.manufacturer.abbrev}</strong>
           </p>
-          <p>{truncate(res.rocket.configuration.description)}</p>
-          <button type="button" className="link">
-            <span>Learn more about this rocket</span>
-          </button>
+          <p>{truncate(res.rocket.configuration?.description)}</p>
+          <Link className="link" to={`/Rocket/${res.rocket.configuration.id}`}>
+            Learn more about this rocket
+          </Link>
         </div>
         <div className="launchesDetail-vid">
           {vid ? (
