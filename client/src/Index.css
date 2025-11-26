@@ -129,19 +129,17 @@ button {
   border-radius: 20px;
   text-wrap: balance;
   text-align: center;
-  .imgPic {
-    mask-image: radial-gradient(circle, var(--bg-color) 0%, transparent 100%);
-  }
 }
 .divSmall {
-  /* border: 1px solid rgba(255, 255, 255, 0.259); */
+  border: 1px solid rgba(255, 255, 255, 0.259);
   padding: 0.25rem 1.25rem;
-  /* border-radius: 20px; */
-  /* text-wrap: balance; */
-  /* text-align: center; */
-  /* display: block; */
-  /* width: 100%; */
+  border-radius: 20px;
+  text-wrap: balance;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
+
 .divStyle > * {
   display: block;
 }
