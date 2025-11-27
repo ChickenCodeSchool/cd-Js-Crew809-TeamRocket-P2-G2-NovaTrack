@@ -1,8 +1,12 @@
 import { Link } from "react-router";
 import Logo from "../Logo/Logo";
 import "./navbar.css";
-
-function Navbar() {
+import SwitchBtn from "../SwitchBtn/SwitchBtn";
+type SwitchProps = {
+  dark: boolean;
+  setDark: React.Dispatch<React.SetStateAction<boolean>>;
+};
+function Navbar({ dark, setDark }: SwitchProps) {
   return (
     <>
       <nav className="primNav">
@@ -14,6 +18,9 @@ function Navbar() {
 
           <li>
             <Link to={"./ISSTrack"}>ISS Track</Link>
+          </li>
+          <li>
+            <SwitchBtn dark={dark} setDark={setDark} />
           </li>
         </ul>
       </nav>

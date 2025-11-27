@@ -1,0 +1,50 @@
+.switch {
+  font-size: 31.25%;
+  position: relative;
+  height: 8em;
+  width: 15em;
+  border-radius: 8em;
+  transition: all 500ms ease-in-out;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+/* .switchContainer {
+  position: absolute;
+  right: 1rem;
+} */
+.moon {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  transition: all 400ms ease-in-out;
+  top: 1.5em;
+  left: 1.5em;
+  transform: rotate(-75deg);
+  width: 5em;
+  height: 5em;
+  box-shadow: 1.5em 1.25em 0 0 #d9fbff inset,
+    var(--moonColor) 0 -3.5em 0 -2.25em, var(--moonColor) 1.5em 3.5em 0 -2.25em,
+    var(--moonColor) 1em 6.5em 0 -2em, var(--moonColor) 3em 1em 0 -2.05em,
+    var(--moonColor) 4em 4em 0 -2.25em, var(--moonColor) 3em 6.5em 0 -2.25em,
+    var(--moonColor) -2em 3.5em 0 -2.25em, var(--moonColor) -0.5em 5em 0 -2.25em;
+  pointer-events: none;
+}
+
+.sun {
+  border-radius: 50%;
+  transition: all 400ms ease-in-out;
+  position: absolute;
+  display: block;
+  top: 2.25em;
+  left: 10.5em;
+  transform: rotate(0deg);
+  width: 3.5em;
+  height: 3.5em;
+  background: #9ee3fb;
+  box-shadow: 1.5em 1.5em 0 2.5em black inset, 0 -2.5em 0 -1.35em black,
+    1.75em -1.75em 0 -1.5em black, 2.5em 0 0 -1.35em black,
+    1.75em 1.75em 0 -1.5em black, 0 2.5em 0 -1.35em black,
+    -1.75em 1.75em 0 -1.5em black, -2.5em 0 0 -1.35em black,
+    -1.75em -1.75em 0 -1.5em black;
+  pointer-events: none;
+}

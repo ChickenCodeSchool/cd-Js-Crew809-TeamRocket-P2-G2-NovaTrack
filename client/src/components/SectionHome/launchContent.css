@@ -5,7 +5,7 @@
   gap: 0.5rem;
   overflow: hidden;
   max-height: 175px;
-  min-height:175px;
+  min-height: 175px;
 }
 
 .singleLaunchContent {
@@ -15,7 +15,7 @@
   padding: 0.5rem 0.5rem 0.5rem 1.25rem;
   align-items: center;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.089);
+  border: 1px solid var(--border-color);
   width: 100%;
-  transition: .3s linear;
+  transition: 0.3s linear;
 }

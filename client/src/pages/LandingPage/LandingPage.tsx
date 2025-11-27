@@ -1,16 +1,12 @@
-import "./earth.css";
-
-type earthProps = {
-  className: string;
-};
-function Earth({ className }: earthProps) {
+import "./landingPage.css";
+function LandingPage() {
   return (
-    <div className={className}>
+    <div className="landingPage-container">
       <svg
         viewBox="0 0 1900 600"
         width="1900"
         height="600"
-        className="earthSvg"
+        className="landingPage-svg"
       >
         <defs>
           <mask id="maskcircle" maskUnits="userSpaceOnUse">
@@ -30,9 +26,9 @@ function Earth({ className }: earthProps) {
             <feComposite operator="atop" in2="SourceGraphic" />
           </filter>
         </defs>
-        <g id="outsideShadows">
+        <g id="landingPage-outsideShadows">
           <ellipse
-            className="el"
+            className="landingPage-el"
             cx="950"
             cy="570"
             ry="200"
@@ -41,7 +37,7 @@ function Earth({ className }: earthProps) {
             filter="url(#blur)"
           />
           <ellipse
-            className="el"
+            className="landingPage-el"
             cx="950"
             cy="510"
             ry="160"
@@ -50,7 +46,7 @@ function Earth({ className }: earthProps) {
             filter="url(#blur)"
           />
           <ellipse
-            className="el"
+            className="landingPage-el"
             cx="950"
             cy="480"
             ry="150"
@@ -60,7 +56,7 @@ function Earth({ className }: earthProps) {
           />
 
           <ellipse
-            className="elb"
+            className="landingPage-elb"
             cx="950"
             cy="900"
             ry="700"
@@ -69,7 +65,7 @@ function Earth({ className }: earthProps) {
             filter="url(#blur)"
           />
           <ellipse
-            className="el1"
+            className="landingPage-el1"
             cx="950"
             cy="520"
             ry="150"
@@ -78,18 +74,18 @@ function Earth({ className }: earthProps) {
             filter="url(#blur)"
           />
         </g>
-        <circle className="bigcircle" cx="950" cy="3400" r="3000" />
+        <circle className="landingPage-bigcircle" cx="950" cy="3400" r="3000" />
         <circle
-          className="bigcircle2"
+          className="landingPage-bigcircle2"
           cx="950"
           cy="4449"
           r="4040"
           mask="url(#maskcircle)"
           filter="url(#innerDropshadow)"
         />
-        <g id="innerShadow" mask="url(#maskcircle)">
+        <g id="landingPage-innerShadow" mask="url(#maskcircle)">
           <ellipse
-            className="el1"
+            className="landingPage-el1"
             cx="950"
             cy="320"
             ry="100"
@@ -98,7 +94,7 @@ function Earth({ className }: earthProps) {
             filter="url(#blur2)"
           />
           <ellipse
-            className="el2"
+            className="landingPage-el2"
             cx="950"
             cy="400"
             ry="50"
@@ -112,4 +108,4 @@ function Earth({ className }: earthProps) {
     </div>
   );
 }
-export default Earth;
+export default LandingPage;

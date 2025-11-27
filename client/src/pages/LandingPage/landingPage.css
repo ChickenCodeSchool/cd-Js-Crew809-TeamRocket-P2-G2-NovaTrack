@@ -1,0 +1,53 @@
+.landingPage-container {
+  position: absolute;
+  bottom: 0;
+  .landingPage-svg {
+    width: 100vw;
+    animation: earth linear 0.5s both;
+
+    .landingPage-bigcircle {
+      fill: #ffffff;
+    }
+    rect {
+      fill: var(--bg-color);
+    }
+  }
+}
+.landingPage-el {
+  fill: rgba(255, 255, 255, 0.162);
+}
+.landingPage-elb {
+  fill: #6767b466;
+}
+.landingPage-el1 {
+  fill: rgb(255, 255, 255);
+}
+.landingPage-el2 {
+  fill: #6767b43d;
+}
+#landingPage-outsideShadows {
+  animation: xx 0.5s 1s linear both;
+}
+#landingPage-innerShadows {
+  animation: xx 0.5s 0.5s linear both;
+}
+@keyframes xx {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes trans {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+.landingPage-bigcircle2 {
+  fill: var(--bg-color);
+  animation: trans 0.5s linear both;
+}

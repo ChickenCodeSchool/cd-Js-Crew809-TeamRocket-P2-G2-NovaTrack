@@ -123,5 +123,5 @@ ul::after {
 }
 
 .navChilds input {
-  border: 1px solide white;
+  border: 1px solide var(--text-color);
 }

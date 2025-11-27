@@ -11,11 +11,16 @@ import DetailEvents from "./pages/Events/DetailEvents";
 import NotFound from "./pages/NotFound/NotFound";
 import Expedition from "./pages/Expedition/Expedition";
 import Rocketdetail from "./pages/Rocket/RocketDetail";
+import LandingPage from "./pages/LandingPage/LandingPage";
 
 const router = createBrowserRouter([
   {
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
       {
         path: "/Home",
         element: <Home />,
