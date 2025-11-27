@@ -1,5 +1,6 @@
 import EventsContent from "../../components/SectionHome/EventsContent";
 import ExpeditionContent from "../../components/SectionHome/ExpeditionContent";
+import LandingContent from "../../components/SectionHome/LandingContent";
 import LaunchContent from "../../components/SectionHome/LaunchContent";
 import NavDetail from "../../components/SectionHome/NavDetail";
 import SectionHome from "../../components/SectionHome/SectionHome";
@@ -21,20 +22,27 @@ function Home() {
   const [searchExpe, setSearchExpe] = useState("");
   const [isExpandedExpe, setIsExpandedExpe] = useState(false);
 
+  const [filterLanding, setFilterLanding] = useState("&ordering=-last_updated");
+  const [searchLanding, setSearchLanding] = useState("");
+  const [isExpandedLanding, setIsExpandedLanding] = useState(false);
+
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
     <>
       <NavDetail
         isExpandedLaunches={isExpandedLaunches}
-        isExpandedEvents={isExpandedEvents}
-        isExpandedExpe={isExpandedExpe}
         setFilterLaunches={setFilterLaunches}
         setSearchLaunches={setSearchLaunches}
         setFilterEvents={setFilterEvents}
         setSearchEvents={setSearchEvents}
+        isExpandedEvents={isExpandedEvents}
+        isExpandedExpe={isExpandedExpe}
         setFilterExpe={setFilterExpe}
         setSearchExpe={setSearchExpe}
+        isExpandedLanding={isExpandedLanding}
+        setFilterLanding={setFilterLanding}
+        setSearchLanding={setSearchLanding}
       />
       <SectionHome
         isExpanded={isExpandedLaunches}
@@ -68,6 +76,19 @@ function Home() {
         childClass="allExpeContent"
       >
         <ExpeditionContent filterExpe={filterExpe} searchExpe={searchExpe} />
+      </SectionHome>
+
+      <SectionHome
+        isExpanded={isExpandedLanding}
+        setIsExpanded={setIsExpandedLanding}
+        title="Landings"
+        sectionRef={sectionRef}
+        childClass="allLandingContent"
+      >
+        <LandingContent
+          filterLanding={filterLanding}
+          searchLanding={searchLanding}
+        />
       </SectionHome>
     </>
   );

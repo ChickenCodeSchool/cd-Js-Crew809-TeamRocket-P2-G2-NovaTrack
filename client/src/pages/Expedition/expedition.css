@@ -1,4 +1,4 @@
-.expeditionDetailContainer {
+/* .expeditionDetailContainer {
   animation: fade 0.5s linear both;
   margin: 8rem auto 0 auto;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
   gap: 1rem;
   width: 75%;
-}
+} */
 
 .crewAll,
 .owners {

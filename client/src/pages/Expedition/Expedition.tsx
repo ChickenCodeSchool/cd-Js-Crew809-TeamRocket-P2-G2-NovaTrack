@@ -30,7 +30,7 @@ function Expedition() {
 
   return (
     <>
-      <article className="expeditionDetailContainer">
+      <article className="expeditionDetailContainer detailContainer">
         <>
           <div className="expeHeader">
             <div className="title divStyle">

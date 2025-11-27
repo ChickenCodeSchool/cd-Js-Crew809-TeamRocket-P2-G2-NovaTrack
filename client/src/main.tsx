@@ -17,10 +17,6 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
-        element: <Landing />,
-      },
-      {
         path: "/Home",
         element: <Home />,
       },
@@ -43,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/Rocket/:id",
         element: <Rocketdetail />,
+      },
+      {
+        path: "/Landing/:id",
+        element: <Landing />,
       },
       {
         path: "*",

@@ -16,8 +16,7 @@ function useElementSize(el: string): ElementSize {
         width: element.clientWidth,
         height: element.clientHeight,
       });
-    console.log(elSize);
-  }, []);
+  }, [element]);
 
   return elSize;
 }
