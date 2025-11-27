@@ -9,7 +9,6 @@
   margin: 1rem auto;
   width: clamp(300px, 100%, 1300px);
   align-items: center;
-  background-color: var(--bg-color);
 
   h3 {
     font-size: 2.25rem;
@@ -28,4 +27,7 @@
 }
 section.sectionHome:first-of-type {
   margin-top: 8rem;
+}
+section.sectionHome:last-of-type {
+  margin-bottom: 8rem;
 }

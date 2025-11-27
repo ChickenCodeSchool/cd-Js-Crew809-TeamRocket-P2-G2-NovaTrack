@@ -11,9 +11,9 @@ type ISSdataTypes = {
 
 type ISSlocTypes = {
   country: string;
-  region: string;
-  city: string;
-  ocean: string;
+  // region: string;
+  // city: string;
+  // ocean: string;
 };
 
 function ISSinfos() {
@@ -36,15 +36,18 @@ function ISSinfos() {
       });
 
       const geoResponse = await fetch(
-        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${issJson.latitude}&longitude=${issJson.longitude}&localityLanguage=en`
+        // `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${issJson.latitude}&longitude=${issJson.longitude}&localityLanguage=en`
+        `https://api.locationiq.com/v1/reverse?lat=${issJson.latitude}&${issJson.longitude}&format=json&accept-language=en&addressdetails=1&oceans=1`
       );
       const geoJson = await geoResponse.json();
 
       setGeoLoc({
-        country: geoJson.countryName || "Over Ocean",
-        region: geoJson.principalSubdivision || "",
-        city: geoJson.city || geoJson.locality || "",
-        ocean: geoJson.localityInfo?.informative?.[0]?.name || "",
+        // country: geoJson.countryName || "Over Ocean",
+        // region: geoJson.principalSubdivision || "",
+        // city: geoJson.city || geoJson.locality || "",
+        // ocean: geoJson.localityInfo?.informative?.[0]?.name || "",
+
+        country: geoJson.address.country,
       });
 
       if (issResponse.status !== 200 || geoResponse.status !== 200) {

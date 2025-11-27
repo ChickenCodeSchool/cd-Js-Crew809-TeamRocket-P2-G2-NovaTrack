@@ -5,6 +5,7 @@ import LeafletMap from "../../components/Map/LeafletMap";
 import Loader from "../../components/Loader/Loader";
 import ErrorComp from "../../components/ErrorComp/ErrorComp";
 import type { LaunchesDetail } from "../../types/detailTypes";
+import Earth from "../../components/Earth/Earth";
 
 type VideoUrl = {
   live: boolean;

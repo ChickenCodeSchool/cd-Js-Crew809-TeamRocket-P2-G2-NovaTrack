@@ -1,3 +1,4 @@
+import Earth from "../../components/Earth/Earth";
 import EventsContent from "../../components/SectionHome/EventsContent";
 import ExpeditionContent from "../../components/SectionHome/ExpeditionContent";
 import LandingContent from "../../components/SectionHome/LandingContent";
