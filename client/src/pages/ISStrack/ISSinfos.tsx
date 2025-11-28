@@ -23,7 +23,7 @@ function ISSinfos() {
   const [issData, setIssData] = useState<ISSdataTypes | null>();
   const [geoLoc, setGeoLoc] = useState<ISSlocTypes | null>();
   const [err, setErr] = useState(null);
-
+  const [isUpdating, setIsUpdating] = useState(false);
   const fetchISSPosition = async () => {
     try {
       const issResponse = await fetch(
@@ -76,6 +76,7 @@ function ISSinfos() {
 
     return () => clearInterval(interval);
   }, []);
+
   if (err) {
     return <ErrorComp big={false} statNumb={err} />;
   }
@@ -91,24 +92,32 @@ function ISSinfos() {
 
           {geoLoc.country === undefined || geoLoc.country === "" ? (
             <span className="  divSmall">
-              <span className="issValues">{geoLoc?.backup}</span>
+              <span key={geoLoc?.backup} className="issValues">
+                {geoLoc?.backup}
+              </span>
             </span>
           ) : (
-            <span className="  divSmall">
-              <span className="issValues">{geoLoc?.country}</span>
+            <span className=" divSmall">
+              <span key={geoLoc?.country} className="issValues">
+                {geoLoc?.country}
+              </span>
             </span>
           )}
         </div>
         <div>
           <span>Latitude </span>
           <span className=" divSmall">
-            <span className="issValues">{issData.latitude}</span>
+            <span key={issData?.latitude} className="issValues">
+              {issData?.latitude}
+            </span>
           </span>
         </div>
         <div>
           <span>Longitude </span>
           <span className=" divSmall">
-            <span className="issValues">{issData?.longitude}</span>
+            <span key={issData?.longitude} className="issValues">
+              {issData?.longitude}
+            </span>
           </span>
         </div>
       </div>

@@ -1,6 +1,5 @@
 nav {
   display: grid;
-  animation: fadeOpa 0.5s ease-in-out both;
   place-items: center;
 }
 .primNav {
