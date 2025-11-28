@@ -128,7 +128,6 @@ function DetailEvents() {
         }
       })
       .catch((error) => setErr(error.message));
-    console.log(res);
   }, []);
   if (err) {
     return <ErrorComp big={true} statNumb={err} />;

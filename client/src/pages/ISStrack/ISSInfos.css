@@ -1,0 +1,37 @@
+.locate {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  place-items: center;
+  margin: 3rem 0 2rem 0;
+}
+.locate > * {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  overflow: hidden;
+}
+.issValues {
+  animation: slideISS 10s ease-in-out both infinite;
+  display: inline-block;
+}
+@keyframes slideISS {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  90% {
+    transform: translateY(0px);
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: translateY(0.5rem);
+    opacity: 0;
+    height: 0;
+  }
+}

@@ -4,7 +4,6 @@ type SwitchProps = {
   setDark: React.Dispatch<React.SetStateAction<boolean>>;
 };
 function SwitchBtn({ dark, setDark }: SwitchProps) {
-  console.log(setDark);
   return (
     <div className="switchContainer">
       <div

@@ -12,7 +12,7 @@ function ISSTrack() {
   return (
     <>
       <div className="ISSContainer">
-        {/* <ISSinfos /> */}
+        <ISSinfos />
         <motion.div
           className="motionDiv"
           animate={{
