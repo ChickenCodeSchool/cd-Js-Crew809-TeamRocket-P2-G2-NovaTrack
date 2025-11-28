@@ -45,52 +45,54 @@ function Home() {
         setFilterLanding={setFilterLanding}
         setSearchLanding={setSearchLanding}
       />
-      <SectionHome
-        isExpanded={isExpandedLaunches}
-        setIsExpanded={setIsExpandedLaunches}
-        title="Launches"
-        sectionRef={sectionRef}
-        childClass="allLaunchContent firstsect"
-      >
-        <LaunchContent
-          filterLaunches={filterLaunches}
-          searchLaunches={searchLaunches}
-        />
-      </SectionHome>
-      <SectionHome
-        isExpanded={isExpandedEvents}
-        setIsExpanded={setIsExpandedEvents}
-        title="Events"
-        sectionRef={sectionRef}
-        childClass="allEventsContent"
-      >
-        <EventsContent
-          filterEvents={filterEvents}
-          searchEvents={searchEvents}
-        />
-      </SectionHome>
-      <SectionHome
-        isExpanded={isExpandedExpe}
-        setIsExpanded={setIsExpandedExpe}
-        title="Expeditions"
-        sectionRef={sectionRef}
-        childClass="allExpeContent"
-      >
-        <ExpeditionContent filterExpe={filterExpe} searchExpe={searchExpe} />
-      </SectionHome>
+      <div className="homeContainer">
+        <SectionHome
+          isExpanded={isExpandedLaunches}
+          setIsExpanded={setIsExpandedLaunches}
+          title="Launches"
+          sectionRef={sectionRef}
+          childClass="allLaunchContent firstsect"
+        >
+          <LaunchContent
+            filterLaunches={filterLaunches}
+            searchLaunches={searchLaunches}
+          />
+        </SectionHome>
+        <SectionHome
+          isExpanded={isExpandedEvents}
+          setIsExpanded={setIsExpandedEvents}
+          title="Events"
+          sectionRef={sectionRef}
+          childClass="allEventsContent"
+        >
+          <EventsContent
+            filterEvents={filterEvents}
+            searchEvents={searchEvents}
+          />
+        </SectionHome>
+        <SectionHome
+          isExpanded={isExpandedExpe}
+          setIsExpanded={setIsExpandedExpe}
+          title="Expeditions"
+          sectionRef={sectionRef}
+          childClass="allExpeContent"
+        >
+          <ExpeditionContent filterExpe={filterExpe} searchExpe={searchExpe} />
+        </SectionHome>
 
-      <SectionHome
-        isExpanded={isExpandedLanding}
-        setIsExpanded={setIsExpandedLanding}
-        title="Landings"
-        sectionRef={sectionRef}
-        childClass="allLandingContent"
-      >
-        <LandingContent
-          filterLanding={filterLanding}
-          searchLanding={searchLanding}
-        />
-      </SectionHome>
+        <SectionHome
+          isExpanded={isExpandedLanding}
+          setIsExpanded={setIsExpandedLanding}
+          title="Landings"
+          sectionRef={sectionRef}
+          childClass="allLandingContent"
+        >
+          <LandingContent
+            filterLanding={filterLanding}
+            searchLanding={searchLanding}
+          />
+        </SectionHome>
+      </div>
     </>
   );
 }

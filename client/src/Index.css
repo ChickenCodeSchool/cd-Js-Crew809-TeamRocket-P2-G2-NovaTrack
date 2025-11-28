@@ -122,6 +122,9 @@ p {
 button {
   cursor: pointer;
 }
+.homeContainer {
+  animation: fade 0.5s ease-in-out both;
+}
 
 .divStyle {
   flex-direction: column;
