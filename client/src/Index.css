@@ -3,10 +3,6 @@
   --primary: color-mix(in hsl, var(--bg-color) 20%, var(--text-color));
   --text-color: white;
   --border-color: rgba(255, 255, 255, 0.089);
-  /* --bg-color: rgb(201, 205, 216);
-  --primary: color-mix(in hsl, var(--bg-color) 20%, var(--text-color));
-  --text-color: rgb(0, 0, 0);
-  --border-color: rgba(38, 30, 30, 0.41); */
 }
 *,
 *:after,

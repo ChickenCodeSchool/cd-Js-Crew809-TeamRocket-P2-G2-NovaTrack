@@ -14,7 +14,7 @@ function App() {
       root.style.setProperty("--bg-color", "rgb(7, 12, 21)");
       root.style.setProperty("--text-color", "white");
       root.style.setProperty("--border-color", "rgba(255, 255, 255, 0.089)");
-    } else {
+    } else if (!dark) {
       root.style.setProperty("--bg-color", "#F7F9FC");
       root.style.setProperty("--text-color", "rgb(7, 12, 21)");
       root.style.setProperty("--border-color", "rgba(38, 30, 30, 0.41)");

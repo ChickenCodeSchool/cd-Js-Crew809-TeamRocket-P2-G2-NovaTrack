@@ -25,7 +25,9 @@ function NotFound() {
           <span>ERROR</span>
           <span className="status">404</span>
           <span>Uh oh! Looks like you got lost...</span>
-          <button type="button">Back to home</button>
+          <button type="button" className="link">
+            Back to home
+          </button>
         </motion.div>
         <Earth className="svgContainer0" />
         <div className="realBtn">

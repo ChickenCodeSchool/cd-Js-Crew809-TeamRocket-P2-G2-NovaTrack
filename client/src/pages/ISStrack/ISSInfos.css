@@ -3,11 +3,12 @@
   grid-template-columns: 1fr;
   gap: 1rem;
   place-items: center;
-  margin: 3rem 0 2rem 0;
+  /* margin: 1rem 0 2rem 0; */
 }
 .locate > * {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 0.35rem;
   place-items: center;
   overflow: hidden;
 }

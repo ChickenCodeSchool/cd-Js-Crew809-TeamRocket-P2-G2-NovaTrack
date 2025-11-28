@@ -2,5 +2,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -10;
+  pointer-events: none; /* Important: permet de cliquer à travers */
+  z-index: 2;
+  transform: translate(-50%, -50%); /* Centre le SVG sur le curseur */
+}
+
+.landingPage-container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden; /* Empêche les débordements */
 }

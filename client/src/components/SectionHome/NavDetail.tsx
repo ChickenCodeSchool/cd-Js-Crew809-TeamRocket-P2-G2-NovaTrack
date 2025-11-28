@@ -89,7 +89,9 @@ function NavDetail({
               setSearchValue(el.target.value);
             }}
             onKeyPress={(e) => {
-              if (e.key === "Enter") handleSearch(searchValue);
+              if (e.key === "Enter") {
+                handleSearch(searchValue);
+              }
             }}
           />
         </li>
