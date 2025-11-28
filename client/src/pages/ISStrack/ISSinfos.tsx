@@ -78,7 +78,7 @@ function ISSinfos() {
   }, []);
 
   if (err) {
-    return <ErrorComp big={false} statNumb={err} />;
+    return <ErrorComp big={true} statNumb={err} />;
   }
   if (!geoLoc) {
     return <Loader />;

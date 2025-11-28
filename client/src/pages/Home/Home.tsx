@@ -47,6 +47,15 @@ function Home() {
       />
       <div className="homeContainer">
         <SectionHome
+          isExpanded={isExpandedExpe}
+          setIsExpanded={setIsExpandedExpe}
+          title="Expeditions"
+          sectionRef={sectionRef}
+          childClass="allExpeContent"
+        >
+          <ExpeditionContent filterExpe={filterExpe} searchExpe={searchExpe} />
+        </SectionHome>
+        <SectionHome
           isExpanded={isExpandedLaunches}
           setIsExpanded={setIsExpandedLaunches}
           title="Launches"
@@ -59,28 +68,6 @@ function Home() {
           />
         </SectionHome>
         <SectionHome
-          isExpanded={isExpandedEvents}
-          setIsExpanded={setIsExpandedEvents}
-          title="Events"
-          sectionRef={sectionRef}
-          childClass="allEventsContent"
-        >
-          <EventsContent
-            filterEvents={filterEvents}
-            searchEvents={searchEvents}
-          />
-        </SectionHome>
-        <SectionHome
-          isExpanded={isExpandedExpe}
-          setIsExpanded={setIsExpandedExpe}
-          title="Expeditions"
-          sectionRef={sectionRef}
-          childClass="allExpeContent"
-        >
-          <ExpeditionContent filterExpe={filterExpe} searchExpe={searchExpe} />
-        </SectionHome>
-
-        <SectionHome
           isExpanded={isExpandedLanding}
           setIsExpanded={setIsExpandedLanding}
           title="Landings"
@@ -90,6 +77,18 @@ function Home() {
           <LandingContent
             filterLanding={filterLanding}
             searchLanding={searchLanding}
+          />
+        </SectionHome>
+        <SectionHome
+          isExpanded={isExpandedEvents}
+          setIsExpanded={setIsExpandedEvents}
+          title="Events"
+          sectionRef={sectionRef}
+          childClass="allEventsContent"
+        >
+          <EventsContent
+            filterEvents={filterEvents}
+            searchEvents={searchEvents}
           />
         </SectionHome>
       </div>
