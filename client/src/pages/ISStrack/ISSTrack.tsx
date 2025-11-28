@@ -25,8 +25,8 @@ function ISSTrack() {
         >
           <img src={issImg} className="issImg" alt="iss" />
         </motion.div>
+        <Earth className="svgContainerISS" />
       </div>
-      <Earth />
     </>
   );
 }

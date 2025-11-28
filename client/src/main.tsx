@@ -10,15 +10,17 @@ import DetailLaunches from "./pages/Launches/DetailLaunches";
 import DetailEvents from "./pages/Events/DetailEvents";
 import NotFound from "./pages/NotFound/NotFound";
 import Expedition from "./pages/Expedition/Expedition";
+import Rocketdetail from "./pages/Rocket/RocketDetail";
+import LandingPage from "./pages/LandingPage/LandingPage";
 
 const router = createBrowserRouter([
   {
+    path: "/",
+    element: <LandingPage />,
+  },
+  {
     element: <App />,
     children: [
-      {
-        path: "/",
-        element: <Landing />,
-      },
       {
         path: "/Home",
         element: <Home />,
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
       {
         path: "/Expedition/:id",
         element: <Expedition />,
+      },
+      {
+        path: "/Rocket/:id",
+        element: <Rocketdetail />,
+      },
+      {
+        path: "/Landing/:id",
+        element: <Landing />,
       },
       {
         path: "*",

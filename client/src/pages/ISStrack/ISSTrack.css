@@ -7,4 +7,5 @@
   flex-direction: column;
   margin-top: 10rem;
   align-items: center;
+  overflow-y: clip;
 }

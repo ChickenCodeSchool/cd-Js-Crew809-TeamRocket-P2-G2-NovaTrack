@@ -8,7 +8,9 @@
   top: 7%;
   margin: 0;
 }
-
+.navDetailBtn {
+  background: none;
+}
 .navDetail {
   display: flex;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -123,5 +125,5 @@ ul::after {
 }
 
 .navChilds input {
-  border: 1px solide white;
+  border: 1px solide var(--text-color);
 }

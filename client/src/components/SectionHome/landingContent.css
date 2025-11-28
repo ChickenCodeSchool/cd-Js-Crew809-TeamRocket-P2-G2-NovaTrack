@@ -1,4 +1,4 @@
-.allExpeContent {
+.allLandingContent {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,14 +8,16 @@
   min-height: 175px;
 }
 
-.singleExpeContent {
+.singleLandingContent {
   position: relative;
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr 1fr auto;
+  grid-template-columns: 1fr 1fr 0.5fr 0.5fr auto;
   padding: 0.5rem 0.5rem 0.5rem 1.25rem;
   align-items: center;
   border-radius: 999px;
   border: 1px solid var(--border-color);
   width: 100%;
   transition: 0.3s linear;
+  backdrop-filter: blur(20px);
+  background: color-mix(in lch, transparent, var(--bg-color) 50%);
 }

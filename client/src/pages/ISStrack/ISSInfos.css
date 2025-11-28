@@ -1,0 +1,28 @@
+.locate {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  place-items: center;
+  /* margin: 1rem 0 2rem 0; */
+}
+.locate > * {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+  place-items: center;
+  overflow: hidden;
+}
+.issValues {
+  animation: slideISS 0.5s ease-in-out;
+  display: inline-block;
+}
+@keyframes slideISS {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -40,9 +40,11 @@ function ErrorComp({ statNumb, big }: ErrorProps) {
             <span>ERROR</span>
             <span className="status">{statNumb}</span>
             <span>Uh oh! Looks like you got lost...</span>
-            <button type="button">Back to home</button>
+            <button className="link" type="button">
+              Back to home
+            </button>
           </motion.div>
-          <Earth />
+          <Earth className="svgContainer0" />
           <div className="realBtn">
             <span>Isn't that funny? </span>
             <Link className="link " to="/home">
