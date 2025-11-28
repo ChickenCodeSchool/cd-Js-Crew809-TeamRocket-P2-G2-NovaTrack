@@ -8,7 +8,7 @@ FROM node:20-alpine
 
 # Install necessary packages.
 # libc6-compat is often needed for compatibility with some npm packages.
-# To improve this layer, limit the packages installed to the bare minimum to keep the image small.
+# To improve this layer, limit the packages installed to the bare minimum to keep the image smalldev.
 # Additionally, consider whether libc6-compat is absolutely necessary here.
 # `no-cache` is used to avoid persisting the package index, saving space.
 # hadolint ignore=DL3018

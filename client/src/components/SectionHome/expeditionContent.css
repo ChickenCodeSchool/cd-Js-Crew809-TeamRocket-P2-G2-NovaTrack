@@ -1,0 +1,21 @@
+.allExpeContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  max-height: 175px;
+  min-height: 175px;
+}
+
+.singleExpeContent {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr auto;
+  padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  transition: 0.3s linear;
+}

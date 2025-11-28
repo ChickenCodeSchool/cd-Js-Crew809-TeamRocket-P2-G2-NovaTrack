@@ -1,0 +1,11 @@
+.issImg {
+  width: 500px;
+}
+.ISSContainer {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+  align-items: center;
+  overflow-y: clip;
+}

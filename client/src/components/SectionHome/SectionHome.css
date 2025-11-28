@@ -1,0 +1,33 @@
+.sectionHome {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "title btn"
+    "content content";
+  margin: 1rem auto;
+  width: clamp(300px, 100%, 1300px);
+  align-items: center;
+
+  h3 {
+    font-size: 2.25rem;
+    margin: 2rem 0 2rem 1.25rem;
+  }
+}
+
+.allContentIsOpen {
+  max-height: 1000px;
+}
+
+.allContent {
+  grid-area: content;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
+section.sectionHome:first-of-type {
+  margin-top: 8rem;
+}
+section.sectionHome:last-of-type {
+  margin-bottom: 8rem;
+}

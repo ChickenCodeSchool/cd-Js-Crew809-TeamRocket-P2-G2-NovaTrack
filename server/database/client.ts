@@ -20,6 +20,6 @@ import type { Pool, ResultSetHeader, RowDataPacket } from "mysql2/promise";
 
 type DatabaseClient = Pool;
 type Result = ResultSetHeader;
-type Rows = RowDataPacket[];
+ Rows = RowDataPacket[];
 
 export type { DatabaseClient, Result, Rows };

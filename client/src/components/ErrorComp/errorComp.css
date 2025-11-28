@@ -1,0 +1,69 @@
+.errorBody {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  /* overflow: hidden; */
+  animation: fadeOpa 0.3s linear both;
+  .movingDiv {
+    cursor: grab;
+    font-family: monospace;
+    position: relabsative;
+    top: 10%;
+    right: 40%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: fit-content;
+
+    span:nth-child(1) {
+      align-self: start;
+    }
+    button {
+      margin-top: 1rem;
+    }
+    .status {
+      font-size: 200px;
+
+      font-weight: bold;
+    }
+  }
+  .realBtn {
+    position: absolute;
+    bottom: 20%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+    gap: 1rem;
+    animation: fadeOpa 0.3s 3.5s linear both;
+    span {
+      font-size: 24px;
+      font-family: monospace;
+      text-shadow: 0px 0px 10px var(--bg-color);
+    }
+    a {
+      align-self: end;
+      text-shadow: 0px 0px 10px var(--bg-color);
+      background: color-mix(in srgb, var(--bg-color) 60%, transparent);
+    }
+  }
+}
+
+.errSmall {
+  font-family: monospace;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  border: 1px solid var(--text-color);
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  vertical-align: center;
+}
+.emote {
+  display: inline-block;
+  transform: scale(1.7);
+}

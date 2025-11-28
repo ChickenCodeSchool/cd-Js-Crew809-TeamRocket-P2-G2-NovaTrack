@@ -1,0 +1,59 @@
+.toggleBtn {
+  margin: 0 1.25rem 0 2.5rem;
+  position: relative;
+  height: fit-content;
+  background: var(--text-color);
+}
+
+.toggleBtn::before {
+  position: absolute;
+  left: -30px;
+  content: "▹";
+  color: var(--text-color);
+  font-size: 2rem;
+  top: -5px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btnIsOpen::before {
+  transform: rotate(90deg);
+}
+
+.toggleText {
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  color: var(--text-color);
+}
+.toggleText::after {
+  content: "See less";
+  position: absolute;
+  color: var(--bg-color);
+  width: 5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.toggleText::before {
+  content: "See more";
+  position: absolute;
+  color: var(--bg-color);
+  width: 5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.btnIsClosed .toggleText::before {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.btnIsOpen .toggleText::after {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}

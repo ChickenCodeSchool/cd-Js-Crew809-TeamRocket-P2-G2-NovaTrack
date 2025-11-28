@@ -1,0 +1,113 @@
+.landingPage-container {
+  height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+}
+.glassy,
+.glassy2 {
+  height: 100%;
+  z-index: 4;
+}
+.glassy {
+  backdrop-filter: blur(50px);
+
+  /* animation: gla 1s both ease-in-out; */
+}
+.glassy2 {
+  backdrop-filter: blur(100px);
+  /* animation: gla2 1s both ease-in-out; */
+}
+body {
+  margin: 0;
+}
+.svgContainerISS {
+  z-index: 10;
+}
+@keyframes gla {
+  to {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes gla2 {
+  to {
+    transform: translateY(100vh);
+  }
+}
+.welcomeContainer {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: 5;
+  width: 100%;
+}
+.welcome {
+  position: relative;
+}
+.welcome1,
+.welcome2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-size: 5rem;
+  width: 100%;
+}
+.welcomeDisc {
+  position: absolute;
+  top: 1000%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeWelcome 0.3s ease-in both 4s;
+  background: none;
+}
+.welcome1 {
+  animation: fadeWelcome 0.3s ease-in both 0.3s;
+  overflow: hidden;
+}
+.welcome2 {
+  overflow: hidden;
+}
+.welcome1 > * {
+  animation: welcome1Childs 0.3s ease-in-out both;
+}
+.welcome2 > * {
+  animation: welcome2Childs 0.3s ease-in-out both;
+}
+@keyframes fadeWelcome {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes welcome2Childs {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes welcome1Childs {
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+.welcomeSkip {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+  padding: 1rem;
+}
